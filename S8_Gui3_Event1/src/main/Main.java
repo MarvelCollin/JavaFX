@@ -12,7 +12,34 @@ import java.io.File;
 
 public class Main extends Application {
 
-    private TableView<FileData> tableView;
+    TableView<FileData> tableView;
+    TableColumn<FileData, String> fileNameColumn;
+    TableColumn<FileData, String> filePathColumn;
+    Button openButton;
+    BorderPane root;
+    Scene scene;
+
+    @Override
+    public void init() {
+        tableView = new TableView<>();
+
+        fileNameColumn = new TableColumn<>("File Name");
+        fileNameColumn.setCellValueFactory(new PropertyValueFactory<>("fileName"));
+
+        filePathColumn = new TableColumn<>("Path");
+        filePathColumn.setCellValueFactory(new PropertyValueFactory<>("filePath"));
+
+        tableView.getColumns().add(fileNameColumn);
+        tableView.getColumns().add(filePathColumn);
+
+        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        fileNameColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.5)); 
+        filePathColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.5)); 
+
+        for (int i = 0; i < 24; i++) {
+            tableView.getItems().add(new FileData("Test File " + (i + 1), "file path " + (i + 1)));
+        }
+    }
 
     public static void main(String[] args) {
         launch(args);
@@ -22,20 +49,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("File Chooser to Table");
 
-        tableView = new TableView<>();
-        TableColumn<FileData, String> fileNameColumn = new TableColumn<>("File Name");
-        fileNameColumn.setCellValueFactory(new PropertyValueFactory<>("fileName"));
-
-        TableColumn<FileData, String> filePathColumn = new TableColumn<>("Path");
-        filePathColumn.setCellValueFactory(new PropertyValueFactory<>("filePath"));
-
-        tableView.getColumns().add(fileNameColumn);
-        tableView.getColumns().add(filePathColumn);
-
-        ScrollPane scrollPane = new ScrollPane(tableView);
-        scrollPane.setFitToWidth(true);
-
-        Button openButton = new Button("Open File");
+        openButton = new Button("Open File");
         openButton.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
             File selectedFile = fileChooser.showOpenDialog(primaryStage);
@@ -43,56 +57,13 @@ public class Main extends Application {
                 tableView.getItems().add(new FileData(selectedFile.getName(), selectedFile.getAbsolutePath()));
             }
         });
-        
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        tableView.getItems().add(new FileData("tetstt", "file path nya"));
-	    tableView.getItems().add(new FileData("tetstt", "file path nya"));
-        
-        BorderPane root = new BorderPane();
+
+        root = new BorderPane();
         root.setCenter(tableView);
         root.setBottom(openButton);
 
-        Scene scene = new Scene(root, 600, 400);
+        scene = new Scene(root, 600, 400);
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
-    public static class FileData {
-        private String fileName;
-        private String filePath;
-
-        public FileData(String fileName, String filePath) {
-            this.fileName = fileName;
-            this.filePath = filePath;
-        }
-
-        public String getFileName() {
-            return fileName;
-        }
-
-        public String getFilePath() {
-            return filePath;
-        }
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javafx.application.Application"/>
+    <fullyQualifiedTypeName name="javafx.collections.FXCollections"/>
+    <fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.TableColumn"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.ScrollPane"/>
+    <fullyQualifiedTypeName name="javafx.beans.property.SimpleStringProperty"/>
+    <fullyQualifiedTypeName name="javafx.scene.Scene"/>
+    <fullyQualifiedTypeName name="javafx.scene.layout.BorderPane"/>
+    <fullyQualifiedTypeName name="java.awt.TextField"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Spinner"/>
+    <fullyQualifiedTypeName name="java.awt.Label"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
+    <fullyQualifiedTypeName name="javafx.stage.FileChooser"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="javafx.scene.layout.FlowPane"/>
+</qualifiedTypeNameHistroy>
