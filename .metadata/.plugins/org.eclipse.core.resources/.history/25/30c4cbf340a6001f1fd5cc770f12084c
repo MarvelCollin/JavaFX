@@ -1,0 +1,30 @@
+package main;
+
+public class FileData {
+	private String fileNaming;
+	private String filePath;
+	
+	public FileData(String fileNaming, String filePath, String name) {
+		super();
+		this.fileNaming = fileNaming;
+		this.filePath = filePath;
+	}
+	
+	public String getfileNaming() {
+		return fileNaming;
+	}
+	
+	public void setfileNaming(String fileNaming) {
+		this.fileNaming = fileNaming;
+	}
+	
+	public String getFilePath() {
+		return filePath;
+	}
+	
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	
+	
+}

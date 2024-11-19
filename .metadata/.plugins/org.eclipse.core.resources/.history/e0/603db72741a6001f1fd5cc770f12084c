@@ -23,18 +23,16 @@ public class Main extends Application {
     public void init() {
         tableView = new TableView<>();
 
-        // buat columnya
         fileNameColumn = new TableColumn<>("File Name");
-        fileNameColumn.setCellValueFactory(new PropertyValueFactory<>("fileName"));
+        fileNameColumn.setCellValueFactory(new PropertyValueFactory<>("fileNaming"));
 
         filePathColumn = new TableColumn<>("Path");
-        filePathColumn.setCellValueFactory(new PropertyValueFactory<>("filePath"));
+        filePathColumn.setCellValueFactory(new PropertyValueFactory<>("fie"));
 
-        // tambahin columnya
         tableView.getColumns().add(fileNameColumn);
         tableView.getColumns().add(filePathColumn);
 
-//        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         fileNameColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.5)); 
         filePathColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.5)); 
 
@@ -54,7 +52,6 @@ public class Main extends Application {
         openButton = new Button("Open File");
         openButton.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
-            // untuk munculin file explorer
             File selectedFile = fileChooser.showOpenDialog(primaryStage);
             if (selectedFile != null) {
                 tableView.getItems().add(new FileData(selectedFile.getName(), selectedFile.getAbsolutePath()));

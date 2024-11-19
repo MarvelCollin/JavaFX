@@ -34,7 +34,7 @@ public class Main extends Application {
         tableView.getColumns().add(fileNameColumn);
         tableView.getColumns().add(filePathColumn);
 
-//        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         fileNameColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.5)); 
         filePathColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.5)); 
 
@@ -54,7 +54,6 @@ public class Main extends Application {
         openButton = new Button("Open File");
         openButton.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
-            // untuk munculin file explorer
             File selectedFile = fileChooser.showOpenDialog(primaryStage);
             if (selectedFile != null) {
                 tableView.getItems().add(new FileData(selectedFile.getName(), selectedFile.getAbsolutePath()));

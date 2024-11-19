@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="javafx.application.Application"/>
     <fullyQualifiedTypeName name="javafx.collections.FXCollections"/>
     <fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.TableColumn"/>
     <fullyQualifiedTypeName name="javafx.scene.control.ScrollPane"/>
     <fullyQualifiedTypeName name="javafx.beans.property.SimpleStringProperty"/>
     <fullyQualifiedTypeName name="javafx.scene.Scene"/>
@@ -17,4 +16,7 @@
     <fullyQualifiedTypeName name="javafx.stage.FileChooser"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="javafx.scene.layout.FlowPane"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.TableColumn"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.cell.PropertyValueFactory"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.TableView"/>
 </qualifiedTypeNameHistroy>

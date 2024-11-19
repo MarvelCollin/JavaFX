@@ -1,0 +1,7 @@
+package main;
+
+public class FileData {
+	private String fileNaming;
+	private String filePaht;
+	
+}
